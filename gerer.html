@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF_8">
+    <title>Test CRM gerer</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fc822fd442.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <section id="header">
+        <div id="haut">
+            <div class="ecart2"></div>
+            <div id="hamburger" onclick="ham()">
+                <i class="fas fa-bars"></i>
+            </div><img id="img" src="./img/logo bl.png">
+
+            <div id="connexiondiv">
+                <button id="connexion" class="btn2" onclick="divConnexion()"><i class="fas fa-user"></i>Connexion</button>
+                <button id="deconnexion" class="btn2" onclick="clickDeconnexion(), sortirGerer()"><i class="fas fa-user"></i>Se deconnecter</button>
+            </div>
+            <div class="ecart2"></div>
+        </div>
+        <div id="bas">
+            <div class="ecart"></div>
+            <div id="pages">
+                <a href="./index.html"><button class="btn"><i class="fas fa-home"></i>Accueil</button></a>
+                <a href="./liste-des-jeux.html"><button class="btn"><i class="fas fa-users"></i>Liste des jeux</button></a>
+                <button class="btn"><i class="fas fa-list"></i>Liste des communautés</button>
+                <a href="./gerer.html"><button id="gerer" class="btn"><i class="fas fa-cog"></i>Gerer</button></a>
+            </div>
+
+
+            <div class="ecart"></div>
+        </div>
+    </section>
+
+    <hr>
+
+
+
+
+
+    <div id="main">
+        <div id="container">
+            <div id="pagesMin">
+                <a href="./index.html"><button class="btn"><i class="fas fa-home"></i>Accueil</button></a>
+                <a href="./liste-des-jeux.html"><button class="btn"><i class="fas fa-users"></i>Liste des jeux</button></a>
+                <button class="btn"><i class="fas fa-list"></i>Liste des communautés</button>
+                <a href="./gerer.html"><button id="gererMin" class="btn"><i class="fas fa-cog"></i>Gerer</button></a>
+            </div>
+
+            <div id="pageclient">
+                <div id="cssConnexion">
+                    <input type="text" placeholder="Nom d'utilisateur" id="utilisateur" class="input">
+                    <input type="text" placeholder="Mot de passe" id="motDePasse" class="input">
+                    <br>
+                    <button class="btn" onclick="clickConnexion()">Je me connecte</button>
+                    <button id="jeVeuxCreerCompte" class="btn">Je veux créer un compte</button>
+                    <button id="retour" class="btn" onclick="retour()">Retour</button>
+
+                </div>
+            </div>
+
+            <div id="creerCompte">
+                <div id="cssCompte">
+                    <input type="text" placeholder="Nom d'utilisateur" id="creerUtilisateur" class="input">
+                    <input type="text" placeholder="Age" id="creerAge" class="input">
+                    <input type="text" placeholder="Genre" id="creerGenre" class="input">
+                    <input type="password" placeholder="Mot de passe" id="creerMotDePasse" class="input">
+                    <br>
+                    <button class="btn" onclick="creerMonCompte()">Creer mon compte</button>
+                    <button id="retour2" class="btn" onclick="retour2()">Retour</button>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div id="sousMenu">
+
+                <button id="dashboard" class="btnSousMenu" onclick="sousMenuDashboard()">Dashboard</button>
+                <button id="produit" class="btnSousMenu" onclick="sousMenuProduits()">Produits</button>
+                <button id="membre" class="btnSousMenu" onclick="sousMenuMembres()">Membres</button>
+                <button id="comunity" class="btnSousMenu" onclick="sousMenuCommunautés()">Communautés</button>
+                <button id="actuality" class="btnSousMenu" onclick="sousMenuActualités()">Actualités</button>
+
+
+            </div>
+
+            <div id="produits" class="s-menuCss">
+
+                <h2>Ajouter un jeu</h2>
+
+                <input type="text" id="inputTitre">
+                <input type="text" id="inputAnnee">
+                <input type="text" id="inputDescription">
+
+                <button onclick="recupererBaseJeux()">Creer nouveau produit</button>
+
+                <button onclick="recupererBaseJeux()">Afficher la liste</button>
+                <br><br>
+                <input type="text" id="inputRecherche">
+                <button onclick="recupererBaseJeux()">Supprimer le titre</button>
+
+                <ul id="Ljeux">
+
+                </ul>
+
+            </div>
+
+            <div id="membres" class="s-menuCss">
+
+                <h2>Liste des membres</h2>
+
+                <label for="membre-select">Liste des membres</label>
+                <select name="membres" id="membre-select">
+            
+            </select>
+
+                <input type="text" placeholder="Pseudo" id="inputPseudo">
+                <input type="text" placeholder="Age" id="inputAge">
+                <input type="text" placeholder="Genre" id="inputGenre">
+                <input type="password" placeholder="Mot de passe" id="inputMDP">
+
+
+                <button onclick="creerMembre()">Creer un membre</button>
+
+                <br><br>
+
+                <input type="text" id="supM">
+
+                <button onclick="supprimerMembres()">Supprimer le membre</button>
+
+            </div>
+
+            <div id="communautés" class="s-menuCss">
+                <h2>Communautés</h2>
+
+            </div>
+
+            <div id="actualité" class="s-menuCss">
+                <h2>Actualité</h2>
+
+            </div>
+
+            <div id="Dashboard" class="s-menuCss">
+                <h2 class="width">Dashboard</h2>
+
+                <div id="rond">
+
+
+                    <div class="r">
+                        <h4>Nombre de membres inscrits :</h4>
+                        <p id="nbmembrescontenu"></p>
+                    </div>
+                    <div class="r">
+                        <h4>Nombre de jeux sur le site :</h4>
+                        <p id="nbjeuxcontenu"></p>
+                    </div>
+
+                    <div class="r">
+                        <h4>Nombre d'utilisateurs connéctés :</h4>
+                        <p>560</p>
+                    </div>
+
+                    <div class="r">
+                        <h4>Nombre de communautés crées :</h4>
+                        <p>2675</p>
+                    </div>
+
+                    <div class="r">
+                        <h4>Moyenne de visiteur du site par jour :</h4>
+                        <p>890</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
