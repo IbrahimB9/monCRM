@@ -31,21 +31,23 @@ window.onload = function checkConnexion() {
         document.getElementById("deconnexion").style.display = "block"
         document.getElementById("gerer").style.display = "block"
     }
-    if (nomdepage == "/C:/Users/Stagiaire/Documents/Test%20CRM/gerer.html") {
+    if (nomdepage == "/C:/Users/Stagiaire/Desktop/monCRM/gerer.html") {
         listeMembres()
 
     }
 
-    if (nomdepage == "/C:/Users/Stagiaire/Documents/Test%20CRM/index.html") {
+    if (nomdepage == "/C:/Users/Stagiaire/Desktop/monCRM/index.html") {
 
     }
 
-    if (nomdepage == "/C:/Users/Stagiaire/Documents/Test%20CRM/liste-des-jeux.html") {
+    if (nomdepage == "/C:/Users/Stagiaire/Desktop/monCRM/liste-des-jeux.html") {
         recupererBaseJeux()
     }
 
 }
 var hamOK = 0
+
+//Menu hamburger
 
 function ham() {
     if (hamOK == 0) {
@@ -61,6 +63,10 @@ function ham() {
     }
 }
 
+
+//Creer mon compte
+
+
 function divConnexion() {
     document.getElementById("pageclient").style.display = "block"
 }
@@ -69,6 +75,9 @@ function divCreerCompte() {
     document.getElementById("pageclient").style.display = "none"
     document.getElementById("creerCompte").style.display = "block"
 }
+
+
+
 
 function creerMonCompte() {
     var creerUtilisateur = document.getElementById("creerUtilisateur").value
@@ -86,6 +95,9 @@ function creerMonCompte() {
     document.getElementById("creerCompte").style.display = "none"
 
 }
+
+// Se connecter
+
 
 function clickConnexion() {
 
@@ -125,6 +137,8 @@ function clickConnexion() {
 
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function retour() {
     document.getElementById("pageclient").style.display = "none"
 }
@@ -132,6 +146,8 @@ function retour() {
 function retour2() {
     document.getElementById("creerCompte").style.display = "none"
 }
+
+//Se deconnecter
 
 function clickDeconnexion() {
 
@@ -145,8 +161,10 @@ function clickDeconnexion() {
     }
 }
 
+//Sortir de la page admin si on est deconnecter
+
 function sortirGerer() {
-    document.location.href = "/C:/Users/Stagiaire/Documents/Test%20CRM/index.html"
+    document.location.href = "/C:/Users/Stagiaire/Desktop/monCRM/index.html"
 }
 
 
@@ -158,7 +176,7 @@ function sortirGerer() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+//Sous menu dashboard
 function sousMenuProduits() {
     document.getElementById("produits").style.display = "block"
     document.getElementById("Dashboard").style.display = "none"
@@ -306,12 +324,8 @@ function supprimerMembres() {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 //BASE DE DONNEES
-
-
-
-
-
 
 async function recupererBaseJeux() {
 
@@ -327,7 +341,7 @@ async function recupererBaseJeux() {
     let baseDonneJeux = await response
     console.log(baseDonneJeux)
 
-    if (nomdepage == "/C:/Users/Stagiaire/Documents/Test%20CRM/gerer.html") {
+    if (nomdepage == "/C:/Users/Stagiaire/Desktop/monCRM/gerer.html") {
 
         function nbmembres() {
 
@@ -388,7 +402,7 @@ async function recupererBaseJeux() {
         function nbjeux() {
 
 
-            document.getElementById('nbjeuxcontenu').innerHTML = "20"
+            document.getElementById('nbjeuxcontenu').innerHTML = baseDonneJeux.length
 
 
         }
@@ -397,7 +411,9 @@ async function recupererBaseJeux() {
 
     }
 
-    if (nomdepage == "/C:/Users/Stagiaire/Documents/Test%20CRM/liste-des-jeux.html") {
+    if (nomdepage == "/C:/Users/Stagiaire/Desktop/monCRM/liste-des-jeux.html") {
+
+        //Lister les jeux sur la page liste de jeux
 
 
 
@@ -417,7 +433,7 @@ async function recupererBaseJeux() {
     }
 
     // NOUVEAUTE PAGE D'ACCEUIL
-    if (nomdepage == "/C:/Users/Stagiaire/Documents/Test%20CRM/index.html") {
+    if (nomdepage == "/C:/Users/Stagiaire/Desktop/monCRM/index.html") {
 
 
         var newgame = document.getElementById("newgame")
