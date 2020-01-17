@@ -8,6 +8,8 @@ var nomdepage = window.location.pathname;
 var test = { _embed: [{}] }
 console.log(nomdepage);
 
+alert("TU VEUX GAGNER UN IPHONE 11 C'EST ICI")
+
 recupererBaseJeux()
 
 
