@@ -8,7 +8,7 @@ var nomdepage = window.location.pathname;
 var test = { _embed: [{}] }
 console.log(nomdepage);
 
-alert("TU VEUX GAGNER UN IPHONE 11 C'EST ICI")
+
 
 recupererBaseJeux()
 
@@ -39,7 +39,7 @@ window.onload = function checkConnexion() {
     }
 
     if (nomdepage == "/C:/Users/Stagiaire/Desktop/monCRM/index.html") {
-
+        alert("TU VEUX GAGNER UN IPHONE 11 C'EST ICI")
     }
 
     if (nomdepage == "/C:/Users/Stagiaire/Desktop/monCRM/liste-des-jeux.html") {
